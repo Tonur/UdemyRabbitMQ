@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0C4E1F33-2F08-49FD-AE04-CBA62188189D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Producer", "Producer", "{D138FEB9-DD0F-44E6-AD46-89141B566820}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transfer", "Transfer", "{D138FEB9-DD0F-44E6-AD46-89141B566820}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumer", "Consumer", "{C01B19D5-3E9F-4E5F-AC17-979E5A2A0AFE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banking", "Banking", "{C01B19D5-3E9F-4E5F-AC17-979E5A2A0AFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{EDB48AED-C74F-4E70-AEC1-98F7A1D5212A}"
 EndProject
@@ -37,29 +37,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{CC2A3481-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{634645EE-3661-40F5-8972-43A78921DDE4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producer.Data", "Microservices\Producer\Producer.Data\Producer.Data.csproj", "{9D1463E4-03C6-4F30-983B-5D75C125D0D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transfer.Data", "Microservices\Transfer\Transfer.Data\Transfer.Data.csproj", "{9D1463E4-03C6-4F30-983B-5D75C125D0D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producer.Domain", "Microservices\Producer\Producer.Domain\Producer.Domain.csproj", "{706A48FC-F5F0-48B5-BE73-0EE6FEF9193E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transfer.Domain", "Microservices\Transfer\Transfer.Domain\Transfer.Domain.csproj", "{706A48FC-F5F0-48B5-BE73-0EE6FEF9193E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producer.Application", "Microservices\Producer\Producer.Application\Producer.Application.csproj", "{11C266A7-3D64-4D4B-B585-43FD734EF573}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transfer.Application", "Microservices\Transfer\Transfer.Application\Transfer.Application.csproj", "{11C266A7-3D64-4D4B-B585-43FD734EF573}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Domain", "Microservices\Consumer\Consumer.Domain\Consumer.Domain.csproj", "{888B1821-63EA-4ED4-8DB2-337998F7201E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Domain", "Microservices\Banking\Banking.Domain\Banking.Domain.csproj", "{888B1821-63EA-4ED4-8DB2-337998F7201E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Data", "Microservices\Consumer\Consumer.Data\Consumer.Data.csproj", "{1AEAE05D-EF35-46BE-9009-A9CE4644E93A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Data", "Microservices\Banking\Banking.Data\Banking.Data.csproj", "{1AEAE05D-EF35-46BE-9009-A9CE4644E93A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Application", "Microservices\Consumer\Consumer.Application\Consumer.Application.csproj", "{89E2E090-9628-407D-B53D-7161875AF2EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Application", "Microservices\Banking\Banking.Application\Banking.Application.csproj", "{89E2E090-9628-407D-B53D-7161875AF2EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ.Bus", "Core\RabbitMQ.Bus\RabbitMQ.Bus.csproj", "{8C7CCFC0-3403-4CA5-9E08-81FAE6C09BD9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ.IoC", "Core\RabbitMQ.IoC\RabbitMQ.IoC.csproj", "{E5BF2802-61B0-4398-9D13-6AC0F5B277C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer.Api", "Microservices\Producer\Producer.Api\Producer.Api.csproj", "{2F3231C8-EE0B-42FF-88F3-388C955CF896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transfer.Api", "Microservices\Transfer\Transfer.Api\Transfer.Api.csproj", "{2F3231C8-EE0B-42FF-88F3-388C955CF896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer.Api", "Microservices\Consumer\Consumer.Api\Consumer.Api.csproj", "{10803877-39C1-454C-BA10-1D7FF939796D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Api", "Microservices\Banking\Banking.Api\Banking.Api.csproj", "{10803877-39C1-454C-BA10-1D7FF939796D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{F0298895-5B9E-4665-AB35-1A441F703425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Bff", "ApiGateway\Web.Bff\Web.Bff.csproj", "{71887FCD-63B9-4857-91CD-D6152318A10D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Bff", "ApiGateway\Web.Bff\Web.Bff.csproj", "{71887FCD-63B9-4857-91CD-D6152318A10D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
