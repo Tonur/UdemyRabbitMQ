@@ -36,7 +36,7 @@ namespace Banking.Api
             services.AddRabbitMq();
             
             services.AddSwaggerGen(c =>
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ReConsumerservation Microservice", Version = "v1" }));
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Banking Microservice", Version = "v1" }));
             services.AddControllers();
 
             services.AddDbContext<BankingDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalDb")));
@@ -56,7 +56,7 @@ namespace Banking.Api
             app.UseRouting();
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Reservation Microservice v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice v1"));
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }

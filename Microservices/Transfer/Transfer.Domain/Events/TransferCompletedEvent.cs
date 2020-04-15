@@ -1,6 +1,6 @@
 ﻿using RabbitMQ.Bus.Events;
 
-namespace Banking.Domain.Events
+namespace Transfer.Domain.Events
 {
     public class TransferCompletedEvent : Event
     {

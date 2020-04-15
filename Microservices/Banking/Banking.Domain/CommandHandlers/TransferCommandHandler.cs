@@ -28,7 +28,7 @@ namespace Banking.Domain.CommandHandlers
         {
             await _accountRepository.Transfer(request.From, request.To, request.Amount);
 
-            _eventBus.PublishEvent(new TransferCompletedEvent());
+            _eventBus.PublishEvent(new TransferCompletedEvent(request.From, request.To, request.Amount));
             return await _accountRepository.GetAccounts();
         }
     }

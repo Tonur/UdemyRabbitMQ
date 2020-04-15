@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\RabbitMQ.Bus\RabbitMQ.Bus.csproj" />
+  </ItemGroup>
+
 </Project>

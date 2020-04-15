@@ -34,8 +34,8 @@ namespace Banking.Api.Controllers
             }
         }
 
-        [HttpPost]
-        public async Task<ActionResult<IEnumerable<Account>>> Post([FromBody] AccountTransfer accountTransfer)
+        [HttpPost("Transfer")]
+        public async Task<ActionResult<IEnumerable<Account>>> Transfer([FromBody] AccountTransfer accountTransfer)
         {
             try
             {

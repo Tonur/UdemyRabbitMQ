@@ -11,10 +11,38 @@
         }
       ],
       "UpstreamPathTemplate": "/Account",
-      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UpstreamHttpMethod": [ "Get" ],
       "SwaggerKey": "Account"
+    },
+    {
+      "DownstreamPathTemplate": "/Account/Transfer",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/Account/Transfer",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "Account"
+    },
+    //----------------------------------------
+    //Transfer Microservice Api Registrations
+    {
+      "DownstreamPathTemplate": "/Transfer/History",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/Transfer/History",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "Transfer"
     }
-
+    //----------------------------------------
   ],
   "SwaggerEndPoints": [
     //Account Microservice Api Registrations
@@ -25,6 +53,18 @@
           "Name": "Account API",
           "Version": "v1",
           "Url": "http://localhost:5002/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    //---------------------------------------------
+    //Transfer Microservice Api Registrations
+    {
+      "Key": "Transfer",
+      "Config": [
+        {
+          "Name": "Transfer API",
+          "Version": "v1",
+          "Url": "http://localhost:5004/swagger/v1/swagger.json"
         }
       ]
     }
