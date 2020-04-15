@@ -20,6 +20,7 @@ namespace Web.Bff
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
+                .UseDefaultServiceProvider(options => options.ValidateScopes = false)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                     config
                         .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)

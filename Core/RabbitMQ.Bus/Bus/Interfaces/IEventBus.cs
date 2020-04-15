@@ -6,6 +6,8 @@ namespace RabbitMQ.Bus.Bus.Interfaces
 {
     public interface IEventBus
     {
+        Task<TR> SendCommand<T, TR>(T command) where T : Command<TR>;
+
         Task SendCommand<T>(T command) where T : Command;
 
         void PublishEvent<T>(T @event) where T : Event;

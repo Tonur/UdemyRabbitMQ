@@ -29,7 +29,12 @@ namespace RabbitMQ.Bus.Bus
             _eventTypes = new List<Type>();
         }
 
-        public Task SendCommand<T>(T command) where T : Command
+        public Task<TR> SendCommand<T, TR>(T command) where T : Command<TR>
+        {
+            return _mediator.Send(command);
+        }
+
+        public Task SendCommand<T> (T command) where T : Command
         {
             return _mediator.Send(command);
         }
