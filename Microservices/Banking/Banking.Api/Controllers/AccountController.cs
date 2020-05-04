@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Banking.Application.Interfaces;
 using Banking.Application.Models;
 using Banking.Domain.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Banking.Api.Controllers

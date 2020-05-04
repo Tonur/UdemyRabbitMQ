@@ -1,0 +1,44 @@
+﻿@page "/fetchhistory"
+@using AdminPanel.Shared
+@using AdminPanel.Shared.DTOs
+@using AdminPanel.Client.Services
+@inject ITransferService TransferService
+@inject IBankingService BankingService
+
+
+@if (accounts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Account type</th>
+                <th>Account balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var account in accounts)
+            {
+                <tr>
+                    <td>@account.Id</td>
+                    <td>@account.AccountType</td>
+                    <td>@account.AccountBalance</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Account> accounts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        accounts = await BankingService.GetAccounts();
+    }
+
+}

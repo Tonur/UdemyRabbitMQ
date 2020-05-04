@@ -1,0 +1,50 @@
+﻿@page "/transfer"
+@using AdminPanel.Shared;
+@using AdminPanel.Shared.DTOs;
+@using AdminPanel.Client.Services;
+@inject IBankingService BankingService
+@inject ITransferService TransferService
+
+@if (accounts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <p>From: </p>
+    <select class="badge-primary" id="fromAccount" @bind="FromAccount">
+        @foreach (var account in accounts)
+        {
+            <option value="@account.Id">@account.Id: @account.AccountType</option>
+        }
+    </select>
+    <p>To: </p>
+    <select class="badge-primary" id="toAccount" @bind="ToAccount">
+        @foreach (var account in accounts)
+        {
+            <option value="@account.Id">@account.Id: @account.AccountType</option>
+        }
+    </select>
+
+    <input class="input-group" @bind="Amount" />
+
+    <button class="btn btn-dark" @onclick="TransferAmount"></button>
+}
+@code {
+    public int FromAccount { get; set; }
+    public int ToAccount { get; set; }
+    public decimal Amount { get; set; }
+
+    private List<Account> accounts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        accounts = await BankingService.GetAccounts();
+    }
+
+    protected async void TransferAmount()
+    {
+        await TransferService.Transfer(new TransferDTO { From = FromAccount, To = ToAccount, Amount = Amount });
+    }
+}

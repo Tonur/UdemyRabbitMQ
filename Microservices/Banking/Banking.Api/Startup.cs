@@ -34,15 +34,20 @@ namespace Banking.Api
         { 
             services.AddMediatR(typeof(Startup));
             services.AddRabbitMq();
-            
-            services.AddSwaggerGen(c =>
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Banking Microservice", Version = "v1" }));
-            services.AddControllers();
 
             services.AddDbContext<BankingDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalDb")));
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IRequestHandler<CreateTransferCommand, IEnumerable<Account>>, CreateTransferCommandHandler>();
+
+            services.AddSwaggerGen(c =>
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Banking Microservice", Version = "v1" }));
+            services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("test", policy => policy.AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +59,8 @@ namespace Banking.Api
             }
 
             app.UseRouting();
+
+            app.UseCors("test");
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice v1"));

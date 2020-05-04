@@ -39,6 +39,10 @@ namespace Transfer.Api
 
             services.AddTransient<TransferCompletedEventHandler>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("test", policy => policy.AllowAnyOrigin());
+            });
 
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Transfer Microservice", Version = "v1" }));
@@ -54,6 +58,8 @@ namespace Transfer.Api
             }
 
             app.UseRouting();
+
+            app.UseCors("test");
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice v1"));
